@@ -1,0 +1,5 @@
+class Question < ActiveRecord::Base
+  has_many :answers
+  validates :name, presence: true, uniqueness: true, :length => { :minimum => 40}
+  validates :body, presence: true, :length => { :minimum => 150}
+end
