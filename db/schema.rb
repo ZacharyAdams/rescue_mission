@@ -20,13 +20,13 @@ ActiveRecord::Schema.define(version: 20140613175948) do
     t.integer "user_id",     null: false
     t.integer "question_id", null: false
     t.string  "title",       null: false
-    t.string  "body",        null: false
+    t.text    "body",        null: false
   end
 
   create_table "questions", force: true do |t|
     t.integer  "user_id",    null: false
     t.string   "title",      null: false
-    t.string   "body",       null: false
+    t.text     "body",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

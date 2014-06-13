@@ -1,0 +1,11 @@
+<h2> Questions </h2>
+
+
+<ul>
+  <% @questions.each do |q| %>
+  <li>
+     <a href ="/questions"><%= q.title %></a> <%= q.user.name %>
+    </li>
+  </ul>
+
+<% end %>
