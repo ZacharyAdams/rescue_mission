@@ -6,11 +6,11 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answer = Answer.new
   end
 
   def create
     @question = Question.new(question_params)
-
      if @question.save
       redirect_to '/questions'
     else
@@ -19,9 +19,22 @@ class QuestionsController < ApplicationController
     end
   end
 
-
   def new
     @question = Question.new
+  end
+
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+
+    if @question.update(question_params)
+        redirect_to @question
+    else
+      render 'edit'
+    end
   end
 
 end
@@ -35,3 +48,5 @@ end
     # { title: "whatever title", author: "some person", body: "blah blah blah" }
     params.require(:question).permit(:user_id, :title, :body)
   end
+
+
