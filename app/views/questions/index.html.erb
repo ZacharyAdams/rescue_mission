@@ -1,10 +1,10 @@
 <h2> Questions </h2>
 
-
+<%= link_to 'Make a new question!', new_question_path %>
 <ul>
   <% @questions.each do |q| %>
   <li>
-      <%= link_to q.title, question_path(q) %> <%= q.user.name %>
+      <%= link_to q.title, question_path(q) %> <%= q.user.name %> <%= q.created_at %>
     </li>
   </ul>
 

@@ -15,7 +15,9 @@
   <% end %>
 </ol>
 
-<p><%= link_to 'Edit this question', edit_question_path %>
+<%= link_to 'Edit this question', edit_question_path %>
+<%= link_to 'Destroy this question', question_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back to Home', questions_path %>
 
 <h3>Submit an answer</h3>
 
